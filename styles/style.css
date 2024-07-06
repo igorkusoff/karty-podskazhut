@@ -7,13 +7,15 @@
 html {
   --main-font: 'Raleway';
   --accent-font: 'STIX Two Text';
-  /* --bg-color: #171717;
-  --text-color: #B3B3B3;
-  --accent-color: transparent; */
-
   --bg-color: #f3efec;
   --text-color: #312a4e;
   --accent-color: #ffab6b;
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
 }
 
 p,
@@ -84,6 +86,14 @@ figure {
   outline-offset: 1px 5px 3px;
 }
 
+.app-link:hover {
+  text-decoration-color: #928c9d;
+}
+
+.theme_dark .app-link:hover {
+  text-decoration-color: #656565;
+}
+
 .content__blockquote {
   width: 75%;
   font-style: italic;
@@ -125,6 +135,7 @@ figure {
   background-color: var(--accent-color);
   padding: 0 4px;
   margin-right: 4px;
+  margin-left: -4px;
   font-size: 30px;
   font-weight: 700;
 }
@@ -169,7 +180,7 @@ figure {
 }
 
 .colored-text::after {
-  content: "";
+  content: '';
   position: absolute;
   background-color: var(--accent-color);
   left: -4px;
@@ -211,11 +222,13 @@ figure {
 }
 
 .header__theme-button:hover {
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: #928c9d;
 }
 
 .header__theme-button:disabled {
   pointer-events: none;
+  text-decoration: none;
 }
 
 .header__theme-button:focus-visible {
@@ -223,12 +236,17 @@ figure {
   outline-offset: 1px 5px 3px;
 }
 
+.theme_dark .header__theme-button:hover {
+  text-decoration: underline;
+  text-decoration-color: #656565;
+}
+
 .header__theme-button_is-active {
   font-weight: 700;
 }
 
 .header__theme-button_is-active::after {
-  content: "";
+  content: '';
   position: absolute;
   background-color: var(--accent-color);
   left: -4px;
@@ -247,12 +265,7 @@ figure {
 
 .footer__copyright {
   font-size: 18px;
-}
-
-.theme_dark {
-  --bg-color: #171717;
-  --text-color: #b3b3b3;
-  --accent-color: transparent;
+  text-transform: uppercase;
 }
 
 .theme_dark .colored-text::after {
@@ -271,4 +284,5 @@ figure {
   .content__text-block_type_first-lettered
   .content__paragraph:first-child::first-letter {
   border: 1px solid currentColor;
+  padding: 0 4px;
 }
